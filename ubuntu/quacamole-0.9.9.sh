@@ -62,7 +62,7 @@ echo "mysql-database: guacamole_db" >> $GUAC_HOME_DIR/guacamole.properties
 echo "mysql-username: guacamole_user" >> $GUAC_HOME_DIR/guacamole.properties
 
 # This is where you will want to change $GUAC_PASSWORD
-echo "mysql-password: "$GUACPASSWORD >> $GUAC_HOME_DIR/guacamole.properties
+echo "mysql-password: "$GUAC_PASSWORD >> $GUAC_HOME_DIR/guacamole.properties
 rm -rf /usr/share/tomcat8/.guacamole
 ln -s $GUAC_HOME_DIR /usr/share/tomcat8/.guacamole
 
