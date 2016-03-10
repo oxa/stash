@@ -64,7 +64,7 @@ ln -s /etc/guacamole /usr/share/tomcat8/.guacamole
 
 mysql -u root -p$MYSQL_ROOT_PASSWORD << EOF
 create database guacamole_db;
-create user 'guacamole_user'@'localhost' identified by '$GUAC_PASSWORD';
+create user 'guacamole_user'@'localhost' identified by $GUAC_PASSWORD;
 GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localhost';
 flush privileges;
 quit
