@@ -12,7 +12,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password password '$M
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password '$MYSQL_ROOT_PASSWORD
 
 #Install Stuff
-apt-get install build-essential
+apt-get -y install build-essential
 apt-get -y install libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev mysql-server mysql-client mysql-common mysql-utilities tomcat8
 
 # Install libjpeg-turbo-dev
@@ -68,7 +68,7 @@ ln -s $GUAC_HOME_DIR /usr/share/tomcat8/.guacamole
 
 mysql -u root -p$MYSQL_ROOT_PASSWORD << EOF
 create database guacamole_db;
-create user 'guacamole_user'@'localhost' identified by $GUAC_PASSWORD;
+create user 'guacamole_user'@'localhost' identified by '$GUAC_PASSWORD';
 GRANT SELECT,INSERT,UPDATE,DELETE ON guacamole_db.* TO 'guacamole_user'@'localhost';
 flush privileges;
 quit
