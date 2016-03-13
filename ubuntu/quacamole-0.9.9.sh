@@ -12,8 +12,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password password '$M
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password '$MYSQL_ROOT_PASSWORD
 
 #Install Stuff
-apt-get -y install build-essential
-apt-get -y install libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev mysql-server mysql-client mysql-common mysql-utilities tomcat8
+apt-get -y install build-essential libcairo2-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev mysql-server mysql-client mysql-common mysql-utilities tomcat8
 
 # Install libjpeg-turbo-dev
 wget -O libjpeg-turbo-official_1.4.2_amd64.deb http://downloads.sourceforge.net/project/libjpeg-turbo/1.4.2/libjpeg-turbo-official_1.4.2_amd64.deb
@@ -37,8 +36,7 @@ tar -xzf mysql-connector-java-5.1.38.tar.gz
 
 # MAKE DIRECTORIES
 mkdir $GUAC_HOME_DIR
-mkdir $GUAC_HOME_DIR/lib
-mkdir $GUAC_HOME_DIR/extensions
+mkdir $GUAC_HOME_DIR/{lib,extensions}
 
 # Install GUACD
 cd guacamole-server-0.9.9
