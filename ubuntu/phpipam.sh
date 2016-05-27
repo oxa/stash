@@ -7,7 +7,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 
 #Get required packages
 apt-get update
-apt-get -y install apache2 mysql-server php5-mysql php5 libapache2-mod-php5 php5-mcrypt php5-gd
+apt-get -y install apache2 mysql-server php5-mysql php5 libapache2-mod-php5 php5-mcrypt php5-gd php5-curl
 wget http://pear.php.net/go-pear.phar
 php go-pear.phar
 
